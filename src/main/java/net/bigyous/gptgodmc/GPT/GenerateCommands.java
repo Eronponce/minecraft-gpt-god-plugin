@@ -28,15 +28,15 @@ public class GenerateCommands {
     private static Map<String, GptFunction> functionMap = Map.of("inputCommands",
             new GptFunction("inputCommands", "input the minecraft commands to be executed",
                     Map.of("commands", new Parameter("array",
-                            "list of minecraft commands, each entry in the list is an individual command", "string")),
+                            "lista de comandos do minecraft, cada entrada na lista é um comando individual", "string")),
                     inputCommands));
     private static GptTool[] tools = GptActions.wrapFunctions(functionMap);
     private static GptAPI gpt = new GptAPI(GPTModels.getMainModel(), tools)
             .addContext("""
-                    You are a helpful assistant that will generate \
-                    minecraft java edition commands based on a prompt inputted by the user, \
-                    even if the prompt seems impossible in minecraft try to approximate it as close as possible \
-                    with minecraft commands a wrong answer is better than no answer. \
+                    Você é um assistente útil que irá gerar \
+                    comandos do minecraft java edition com base em um prompt inserido pelo usuário, \
+                    mesmo que o prompt pareça impossível no minecraft, tente aproximá-lo o mais próximo possível
+                    com comandos do minecraft, uma resposta errada é melhor do que nenhuma resposta. \
                     """, "context")
             .setToolChoice(new GptFunctionReference(functionMap.get("inputCommands")));
 

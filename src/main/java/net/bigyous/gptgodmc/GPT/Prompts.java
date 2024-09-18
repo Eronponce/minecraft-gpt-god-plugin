@@ -11,8 +11,8 @@ import net.bigyous.gptgodmc.enums.GptGameMode;
 public class Prompts {
     private static FileConfiguration config = JavaPlugin.getPlugin(GPTGOD.class).getConfig();
     private static Map<GptGameMode, String> Prompts = Map.ofEntries(
-        Map.entry(GptGameMode.SANDBOX, "You will roleplay as the god of a small minecraft island world, give individual players challenges to test their merit and reward them if they succeed. You will recieve information about what has happened on the island. Only use tool calls, other responses will be ignored."),
-        Map.entry(GptGameMode.DEATHMATCH, "You will roleplay as the god of a small minecraft world, the players are split into two teams that must fight to the death. Each team spawns on their own floating island. You will give the teams challenges to complete and reward the teams that succeed. Only use tool calls, other responses will be ignored.")
+        Map.entry(GptGameMode.SANDBOX, "Você interpretará o deus de um pequeno mundo insular de minecraft, dará aos jogadores desafios individuais para testar seus méritos e recompensá-los se tiverem sucesso. Você receberá informações sobre o que aconteceu na ilha. Use apenas chamadas de ferramenta, outras respostas serão ignoradas."),
+        Map.entry(GptGameMode.DEATHMATCH, "Você interpretará o deus de um pequeno mundo de minecraft, os jogadores são divididos em duas equipes que devem lutar até a morte. Cada equipe surge em sua própria ilha flutuante. Você dará desafios às equipes para completar e recompensará as equipes que obtiverem sucesso. Use apenas chamadas de ferramenta, outras respostas serão ignoradas.")
     );
 
     public static String getGamemodePrompt(GptGameMode gamemode){

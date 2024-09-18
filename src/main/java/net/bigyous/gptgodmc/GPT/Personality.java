@@ -13,7 +13,7 @@ public class Personality {
     private static List<String> dislikes = List.of();
     private static List<String> behaviours = config.getStringList("potentialBehaviors");
 
-    private static String briefing = "The following are behaviours you must reward or punish players for doing. Don't explicitly tell the players this list. When punishing players, reserve directly damaging players for repeat offenders. If most of the players disobey you punish everyone";
+    private static String briefing = "A seguir estão os comportamentos que você deve recompensar ou punir os jogadores por praticarem. Não conte explicitamente esta lista aos jogadores. Ao punir jogadores, reserve os jogadores que causam dano direto para os infratores reincidentes. Se a maioria dos jogadores desobedecer, você pune todos";
 
     public static String generatePersonality() {
         Collections.shuffle(behaviours);
@@ -26,7 +26,7 @@ public class Personality {
         }
         // If we would have, use these fallbacks and inform the user.
         else {
-            JavaPlugin.getPlugin(GPTGOD.class).getLogger().warning("Tried to get more behaviors than actually existed, your configuration file is probably incorrect. Make sure likedBehaviors + dislikedBehaviors is less than your total amount of potential behaviors");
+            JavaPlugin.getPlugin(GPTGOD.class).getLogger().warning("Tentei obter mais comportamentos do que realmente existiam, seu arquivo de configuração provavelmente está incorreto. Certifique-se de que Comportamentos apreciados + Comportamentos não apreciados sejam menores que a quantidade total de comportamentos potenciais");
             likes = List.of("Functioning config files");
             dislikes = List.of("Borked config files");
         }

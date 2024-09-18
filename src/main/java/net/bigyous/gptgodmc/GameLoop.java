@@ -23,8 +23,8 @@ public class GameLoop {
     private static int taskId;
     public static boolean isRunning = false;
     private static String PROMPT;
-    private static String SPEECH_PROMPT_TEPLATE = "%s%s, You can now communicate with the players. Use the server history as a reference to note the change in player behavior %s";
-    private static String ACTION_PROMPT_TEMPLATE = "%s Use this information and the tools provided to reward or punish the players. Only react to events listed under Current, Use the server history as a reference to note the change in player behavior %s";
+    private static String SPEECH_PROMPT_TEPLATE = "%s%s,  você pode se comunicar com os jogadores. Use o histórico do servidor como referência para observar a mudança no comportamento do jogador %s";
+    private static String ACTION_PROMPT_TEMPLATE = "%s Use essas informações e as ferramentas fornecidas para recompensar ou punir os jogadores. Reaja apenas aos eventos listados em Atual. Use o histórico do servidor como referência para observar a mudança no comportamento do jogador %s";
     private static ArrayList<String> previousActions = new ArrayList<String>();
     private static String personality;
     private static int rate = config.getInt("rate") < 1 ? 40 : config.getInt("rate");
@@ -50,7 +50,7 @@ public class GameLoop {
         // the roles system and user are each one token so we add two to this number
         staticTokens = GPTUtils.countTokens(actionPrompt) + 2;
         isRunning = true;
-        GPTGOD.LOGGER.info("GameLoop Started, the minecraft god has awoken");
+        GPTGOD.LOGGER.info("GameLoop iniciado, o deus do minecraft acordou");
     }
 
     public static void stop() {
@@ -61,7 +61,7 @@ public class GameLoop {
         Action_GPT_API = null;
         Speech_GPT_API = null;
         isRunning = false;
-        GPTGOD.LOGGER.info("GameLoop Stoppped");
+        GPTGOD.LOGGER.info("GameLoop parado");
     }
 
     public static void logAction(String actionLog) {

@@ -16,11 +16,11 @@ import java.util.Map;
 
 public class SummarizeLogs {
     private static String context = """
-        You are a helpful assistant that will recieve a log of events from a minecraft server, \
-        or a historical summary and a log of events. \
-        You will create a short summary based on this information that preserves the plot detailed by both, you are viewing these logs from the perspective of a god that rewards %s and punishes %s \
-        Keep track of the reputation of each player, if information in the logs isn't important to the plot omit it. Do not add any extra flourishes, just state the facts, pay attention to actions that align with any objectives listed in the objectives and promises that god makes to the players.
-        These logs are the history of the server so keep everything in the past tense.
+        Você é um assistente útil que receberá um registro de eventos de um servidor Minecraft, \
+        ou um resumo histórico e um registro de eventos. \
+        Você criará um pequeno resumo baseado nessas informações que preserva o enredo detalhado por ambos, você está visualizando esses logs sob a perspectiva de um deus que recompensa %s e pune %s \
+        Acompanhe a reputação de cada jogador, se as informações nos logs não forem importantes para a trama, omita-as. Não adicione nenhum floreio extra, apenas declare os fatos, preste atenção às ações que se alinham com quaisquer objetivos listados nos objetivos e promessas que Deus faz aos jogadores.
+        Esses logs são o histórico do servidor, portanto, mantenha tudo no passado.
         """;
     private static Gson gson = new Gson();
     private static Function<String> submitSummary = (String args) ->{
