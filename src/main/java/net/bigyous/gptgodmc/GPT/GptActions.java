@@ -56,9 +56,9 @@ public class GptActions {
         Player player = GPTGOD.SERVER.getPlayerExact(playerName);
         player.sendRichMessage("<i>You hear something whisper to you...</i>");
         player.sendMessage(message);
-        if(useTts){
-            TextToSpeech.makeSpeech(message, player);
-        }
+        // if(useTts){
+        //     TextToSpeech.makeSpeech(message, player);
+        // }
         EventLogger.addLoggable(new GPTActionLoggable(
                 String.format("whispered \"%s\" to %s", message, playerName)));
     }
@@ -68,9 +68,9 @@ public class GptActions {
                 .decoration(TextDecoration.BOLD, true));
         GPTGOD.SERVER.broadcast(Component.text(message, NamedTextColor.LIGHT_PURPLE)
                 .decoration(TextDecoration.BOLD, true));
-        if(useTts){
-            TextToSpeech.makeSpeech(message, null);
-        }
+        // if(useTts){
+        //     TextToSpeech.makeSpeech(message, null);
+        // }
         EventLogger.addLoggable(new GPTActionLoggable(String.format("announced \"%s\"", message)));
     }
     // in hindsight, I should have used an interface or abstract class to do this but oh well...
